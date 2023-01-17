@@ -3,101 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="82dp"
-        android:background="@color/dark_purple">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="POLITRAVEL"
-            android:textStyle="bold"
-            android:textSize="35dp"
-            android:layout_marginLeft="40dp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/fastup_bold"/>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/avion" />
-
-        <ImageView
-            android:id="@+id/info"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="60dp"
-            android:src="@drawable/interrogante"/>
-    </Toolbar>
-
-    <LinearLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="left">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/idiomoa"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
-
-        <Spinner
-            android:id="@+id/spinner_language"
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"
-            android:layout_marginTop="27dp"
-            android:layout_marginLeft="5dp"/>
-
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/bienvenida"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:textSize="20dp"
-        android:fontFamily="@font/louis_george_cafe"/>
-
-    <ImageView
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/viajero"
-        android:layout_gravity="end"
-        />
-
-    <Button
-        android:id="@+id/continuar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/ligth_purple"
-        android:layout_marginTop="90dp"
-        android:layout_gravity="center"
-        android:text="@string/continuar"
-        android:textSize="18dp"
-        android:padding="10dp"
-        android:fontFamily="@font/fastup_regular"/>
+        android:text="Cynthia"/>
 
 </LinearLayout>
