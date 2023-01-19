@@ -42,13 +42,13 @@ class PaquetDetailActivity: AppCompatActivity() {
         days.text = paquet.days.toString() + " " + resources.getString(R.string.dias)
 
         val origin = findViewById<TextView>(R.id.origin_paquet_detail)
-        origin.text = paquet.origen
+        origin.text = paquet.starting_point
 
         val destiny = findViewById<TextView>(R.id.destiny_paquet_detail)
-        destiny.text = paquet.destiny
+        destiny.text = paquet.end_point
 
         val startingPoint = findViewById<TextView>(R.id.starting_point_paquet_detail)
-        startingPoint.text = paquet.origen
+        startingPoint.text = paquet.starting_point
 
         //----Transport image-----------------------------------------------------------------------
         val transportImg = findViewById<ImageView>(R.id.transport_img_detail)
