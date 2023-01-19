@@ -24,17 +24,16 @@ class PaquetsAdapter(context: Context, val layout: Int, val paquets: MutableList
     }
 
     fun bindPaquet(view: View, paquet: Paquet){
-        //TODO: 10 Llistes personalitzades 18:40
         val imgPaquet = view.findViewById<ImageView>(R.id.item_img_paquet)
         imgPaquet.setImageResource(paquet.imgLow)
 
         val paquetName = view.findViewById<TextView>(R.id.item_name)
         paquetName.text = paquet.name
 
-        val transport = view.findViewById<ImageView>(R.id.item_img_transport)
-        transport.setImageResource(paquet.transport)
+        val transport = view.findViewById<TextView>(R.id.item_img_transport)
+        transport.text = paquet.transport
 
-        val days = view.findViewById<TextView>(R.id.days_lst)
+        val days = view.findViewById<TextView>(R.id.item_days)
         days.text = paquet.days.toString()
     }
 }

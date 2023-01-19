@@ -13,9 +13,9 @@ class PaquetListActivity: AppCompatActivity() {
 
         val paquetsList = findViewById<ListView>(R.id.paquet_list)
 
-        var paquets: MutableList<Paquet> = Json.getPaquets(this)
+        val paquets: MutableList<Paquet> = Json.getPaquets(this)
 
-        val adapter = PaquetsAdapter(this, R.layout.paquets_item, paquets)
+        val adapter = PaquetsAdapter(this, R.layout.paquets_list, paquets)
         paquetsList.adapter = adapter
 
         paquetsList.onItemClickListener = AdapterView.OnItemClickListener()
