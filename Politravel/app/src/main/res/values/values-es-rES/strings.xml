@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Politravel_Cynthia_García</string>
+    <string name="bienvenida">Bienvenido a la aplicación de gestión de paquetes turísticos</string>
+    <string name="continuar">Continuar</string>
+    <string name="info">Esta aplicación que patrocina la agencia de viajes Politravel está creada para garantizar una buena gestión y administración de los paquetes turísticos que vende además de optimizar el proceso</string>
+    <string name="idioma">Selecciona un idioma</string>
+    <string name="itinerary">Itinerario</string>
+    <string name="ver_mas">VER ITINERARIO</string>
+    <string name="disneyland">Siente la magia de Disneyland París</string>
+    <string name="avio">Avión</string>
+    <string name="barcelona">Barcelona</string>
+    <string name="francia">Francia</string>
+    <string name="prat">Barcelona, El prat</string>
+    <string name="fantasyland">Disfruta de dos dias espectaculares en Fantasyland</string>
+    <string name="adventureland">Adventureland</string>
+    <string name="frontierland">Frontierland</string>
+    <string name="harrypotter_londres">Sumérgete en el universo de Harry Potter de Londres</string>
+    <string name="madrid">Madrid</string>
+    <string name="londres">Londres</string>
+    <string name="barajas">Adolfo Suárez Madrid-Barajas</string>
+    <string name="warnerbros">Estudios Warner Bros</string>
+    <string name="harrypotter">Reviviendo Harry Potter</string>
+    <string name="portaventura">PortAventura</string>
+    <string name="tren">Tren</string>
+    <string name="sants_estacio">Sants estación</string>
+    <string name="mediterrania">Mediterrania</string>
+    <string name="furius_baco">Furius Baco</string>
+    <string name="roma_express">Roma express</string>
+    <string name="vaixell">Barco</string>
+    <string name="roma">Roma, Italia</string>
+    <string name="port_vell">Puerto viejo de Marsella</string>
+    <string name="museos_vaticanos">Museos Vaticanos</string>
+    <string name="capilla_sixtina">Capilla Sixtina</string>
+    <string name="tina_turner">Vive el musical de Tina Turner con hotel y entrades incluidas</string>
+    <string name="plaza_mayor">Plaza major</string>
+    <string name="mercado">Mercado de Sant Miquel</string>
+    <string name="palacio">Palacio Real</string>
+    <string name="dias"> dias</string>
+    <string name="dias1">Dias: </string>
+    <string name="modificar">MODIFICAR ITINERARIO</string>
+    <string name="borrar">BORRAR</string>
+    <string name="guardar">GUARDAR</string>
+</resources>
