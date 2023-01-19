@@ -7,11 +7,12 @@ import android.view.View
 import android.widget.*
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity: AppCompatActivity()
+{
     private var languages: Spinner?=null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -20,15 +21,16 @@ class MainActivity : AppCompatActivity() {
         val main = Intent(this, MainActivity::class.java)
 
         val languagesList = arrayOf("", "Español", "Català", "English")
-        var adapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, languagesList)
+        var adapter: ArrayAdapter<String> =
+            ArrayAdapter(this, android.R.layout.simple_spinner_item, languagesList)
 
         languages = findViewById(R.id.spinner_language)
         languages?.adapter=adapter
 
         languages?.onItemSelectedListener = object: AdapterView.OnItemSelectedListener
         {
-
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
                 when(position)
                 {
                     1 ->
@@ -51,7 +53,6 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
