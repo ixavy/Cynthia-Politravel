@@ -1,6 +1,7 @@
 package com.example.politravel
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,16 +25,18 @@ class PaquetsAdapter(context: Context, val layout: Int, val paquets: MutableList
     }
 
     fun bindPaquet(view: View, paquet: Paquet){
-        val imgPaquet = view.findViewById<ImageView>(R.id.item_img_paquet)
-        imgPaquet.setImageResource(paquet.imgLow)
+        val imgPaquet = view.findViewById<ImageView>(R.id.img_paquet_low)
+        val paquetPath = this.context.filesDir.toString() + "/img/" + paquet.img_low
+        val bitmap = BitmapFactory.decodeFile(paquetPath)
+        imgPaquet.setImageBitmap(bitmap)
 
-        val paquetName = view.findViewById<TextView>(R.id.item_name)
+        val paquetName = view.findViewById<TextView>(R.id.name_paquet_item)
         paquetName.text = paquet.name
 
-        val transport = view.findViewById<TextView>(R.id.item_img_transport)
+        val transport = view.findViewById<TextView>(R.id.img_transport_item)
         transport.text = paquet.transport
 
-        val days = view.findViewById<TextView>(R.id.item_days)
+        val days = view.findViewById<TextView>(R.id.days_paquet_item)
         days.text = paquet.days.toString()
     }
 }

@@ -59,13 +59,13 @@ class MainActivity: AppCompatActivity()
         }
         //------------------------------------------------------------------------------------------
 
-        val info = findViewById<ImageView>(R.id.info)
+        val info = findViewById<ImageView>(R.id.info_icon)
         info.setOnClickListener {
             val intent = Intent(this, InfoActivity::class.java)
             startActivity(intent)
         }
 
-        val continuar = findViewById<LinearLayout>(R.id.click)
+        val continuar = findViewById<LinearLayout>(R.id.initial_layout)
         continuar.setOnClickListener{
             val intent = Intent(this, PaquetListActivity::class.java)
             startActivity(intent)

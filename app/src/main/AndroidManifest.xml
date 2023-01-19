@@ -27,6 +27,7 @@
         <activity android:name=".PaquetEditActivity"/>
         <activity android:name=".PaquetListActivity"/>
         <activity android:name=".InfoActivity"/>
+        <activity android:name=".ItineraryListActivity"/>
     </application>
 
 </manifest>

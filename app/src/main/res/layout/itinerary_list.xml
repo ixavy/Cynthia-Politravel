@@ -35,32 +35,10 @@
             android:src="@drawable/icon_info"/>
     </Toolbar>
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/list_itinerary"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_weight="1.5"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/info"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:layout_marginTop="210dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:textSize="20dp"
-            android:fontFamily="@font/louis_george_cafe"/>
-
-        <ImageView
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/icon_traveler"
-            android:layout_gravity="end"
-            />
-
-    </LinearLayout>
 </LinearLayout>

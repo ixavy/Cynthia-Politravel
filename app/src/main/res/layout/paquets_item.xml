@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/item_name"
+        android:id="@+id/name_paquet_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -21,7 +21,7 @@
         android:orientation="horizontal"
         android:gravity="center_horizontal">
         <ImageView
-            android:id="@+id/item_img_paquet"
+            android:id="@+id/img_paquet_low"
             android:layout_width="250dp"
             android:layout_height="150dp"
             android:layout_marginRight="20dp"
@@ -35,7 +35,7 @@
             android:orientation="vertical"
             android:layout_gravity="center_vertical">
             <ImageView
-                android:id="@+id/item_img_transport"
+                android:id="@+id/img_transport_item"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="20dp"/>
@@ -55,7 +55,7 @@
                     android:fontFamily="@font/louis_george_cafe"/>
 
                 <TextView
-                    android:id="@+id/item_days"
+                    android:id="@+id/days_paquet_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey"
