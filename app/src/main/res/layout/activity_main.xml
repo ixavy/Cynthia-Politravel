@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/click">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:background="@color/dark_purple">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textSize="35dp"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/fastup_bold"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/plane"/>
+
+        <ImageView
+            android:id="@+id/info"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/question_mark"/>
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:orientation="horizontal"
+        android:layout_gravity="left">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/language"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_language"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:layout_marginTop="27dp"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bienvenida"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/louis_george_cafe"/>
+
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/traveler"
+            android:layout_gravity="end"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/ligth_purple"
+            android:background="@drawable/shape"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="@string/continuar"
+            android:textSize="17dp"
+            android:padding="10dp"
+            android:fontFamily="@font/fastup_regular"/>
+    </LinearLayout>
+
+</LinearLayout>

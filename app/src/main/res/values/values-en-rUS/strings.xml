@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Politravel_Cynthia_García</string>
+    <string name="bienvenida">Welcome to the tour package management application</string>
+    <string name="continuar">Continue</string>
+    <string name="info">This application sponsored by the travel agency Politravel was created to guarantee good management and administration of the tourist packages it sells in addition to optimizing the process</string>
+    <string name="idioma">Select a language</string>
+    <string name="itinerary">Itinerary</string>
+    <string name="ver_mas">SEE ITINERARY</string>
+    <string name="disneyland">Feel the magic of Disneyland Paris</string>
+    <string name="avio">Plane</string>
+    <string name="barcelona">Barcelona</string>
+    <string name="francia">France</string>
+    <string name="prat">Barcelona, El prat</string>
+    <string name="fantasyland">Enjoy two spectacular days at Fantasyland</string>
+    <string name="adventureland">Adventureland</string>
+    <string name="frontierland">Frontierland</string>
+    <string name="harrypotter_londres">Immerse yourself in the Harry Potter universe in London</string>
+    <string name="madrid">Madrid</string>
+    <string name="londres">Londres</string>
+    <string name="barajas">Adolfo Suárez Madrid-Barajas</string>
+    <string name="warnerbros">Estudies Warner Bros</string>
+    <string name="harrypotter">Reviving Harry Potter</string>
+    <string name="portaventura">PortAventura</string>
+    <string name="tren">Train</string>
+    <string name="sants_estacio">Sants estation</string>
+    <string name="mediterrania">Mediterrania</string>
+    <string name="furius_baco">Furius Baco</string>
+    <string name="roma_express">Rome express</string>
+    <string name="vaixell">Ship</string>
+    <string name="roma">Rome, Italy</string>
+    <string name="port_vell">Old Port of Marseille</string>
+    <string name="museos_vaticanos">Vatican museums</string>
+    <string name="capilla_sixtina">Sistine Chapel</string>
+    <string name="tina_turner">Experience Tina Turner\'s musical with hotel and tickets included</string>
+    <string name="plaza_mayor">Plaça major</string>
+    <string name="mercado">Sant Miquel market</string>
+    <string name="palacio">Reial Palace</string>
+    <string name="dias"> days</string>
+    <string name="dias1">Days: </string>
+    <string name="modificar">EDIT ITINERARY</string>
+    <string name="borrar">DELETE</string>
+    <string name="guardar">SAVE</string>
+</resources>
