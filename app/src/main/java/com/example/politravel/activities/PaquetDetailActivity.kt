@@ -1,13 +1,16 @@
-package com.example.politravel
+package com.example.politravel.activities
 
+import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.politravel.Manifest
+import com.example.politravel.datamodel.Paquet
+import com.example.politravel.R
 
 class PaquetDetailActivity: AppCompatActivity() {
     object paquetConstants{
@@ -41,10 +44,7 @@ class PaquetDetailActivity: AppCompatActivity() {
         val days = findViewById<TextView>(R.id.days_paquet_detail)
         days.text = paquet.days.toString() + " " + resources.getString(R.string.dias)
 
-        val origin = findViewById<TextView>(R.id.origin_paquet_detail)
-        origin.text = paquet.starting_point
-
-        val destiny = findViewById<TextView>(R.id.destiny_paquet_detail)
+        val destiny = findViewById<TextView>(R.id.end_point_paquet_detail)
         destiny.text = paquet.end_point
 
         val startingPoint = findViewById<TextView>(R.id.starting_point_paquet_detail)
@@ -52,19 +52,7 @@ class PaquetDetailActivity: AppCompatActivity() {
 
         //----Transport image-----------------------------------------------------------------------
         val transportImg = findViewById<ImageView>(R.id.transport_img_detail)
-        when (paquet.transport) {
-            paquetConstants.PLANE ->
-                transportImg.setImageResource(R.drawable.transp_plane)
-            paquetConstants.CAR ->
-                transportImg.setImageResource(R.drawable.transp_car)
-            paquetConstants.AVE ->
-                transportImg.setImageResource(R.drawable.transp_train)
-            paquetConstants.BUS ->
-                transportImg.setImageResource(R.drawable.transp_bus)
-            else -> {
-                Toast.makeText(this, "An error ocurred", Toast.LENGTH_LONG).show()
-            }
-        }
+        paquet.setTransportImg(this, paquet.transport, transportImg)
         //------------------------------------------------------------------------------------------
 
         //TODO Fragment googleMaps

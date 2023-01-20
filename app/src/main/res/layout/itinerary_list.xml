@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2"
+        android:layout_weight="0.15"
         android:background="@color/dark_purple">
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="60dp"
             android:src="@drawable/icon_info"/>
-    </Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ListView
         android:id="@+id/list_itinerary"

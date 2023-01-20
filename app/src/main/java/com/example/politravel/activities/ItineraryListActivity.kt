@@ -1,9 +1,10 @@
-package com.example.politravel
+package com.example.politravel.activities
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.politravel.R
 
 class ItineraryListActivity: AppCompatActivity() {
     object itineraryConstants{

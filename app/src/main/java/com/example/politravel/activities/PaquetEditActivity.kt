@@ -1,11 +1,12 @@
-package com.example.politravel
+package com.example.politravel.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.politravel.R
 
-class InfoActivity: AppCompatActivity() {
+class PaquetEditActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_info)
+        setContentView(R.layout.paquets_edit)
     }
 }

@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="82dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
         android:background="@color/dark_purple">
 
         <TextView
@@ -25,11 +26,12 @@
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:src="@drawable/logo_plane" />
-    </Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ListView
         android:id="@+id/list_paquet"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.politravel
+package com.example.politravel.datamodel
 
 class Trip (val startingPointName: String,
            val endingPointName: String,

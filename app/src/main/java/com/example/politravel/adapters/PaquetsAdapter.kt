@@ -1,4 +1,4 @@
-package com.example.politravel
+package com.example.politravel.adapters
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.politravel.datamodel.Paquet
+import com.example.politravel.R
 
 class PaquetsAdapter(context: Context, val layout: Int, val paquets: MutableList<Paquet>):
     ArrayAdapter<Paquet>(context, layout, paquets) {
@@ -33,8 +35,8 @@ class PaquetsAdapter(context: Context, val layout: Int, val paquets: MutableList
         val paquetName = view.findViewById<TextView>(R.id.name_paquet_item)
         paquetName.text = paquet.name
 
-        val transport = view.findViewById<TextView>(R.id.img_transport_item)
-        transport.text = paquet.transport
+        val transportImg = view.findViewById<ImageView>(R.id.img_transport_item)
+        paquet.setTransportImg(this.context, paquet.transport, transportImg)
 
         val days = view.findViewById<TextView>(R.id.days_paquet_item)
         days.text = paquet.days.toString()

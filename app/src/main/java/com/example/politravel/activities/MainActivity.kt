@@ -1,15 +1,23 @@
-package com.example.politravel
+package com.example.politravel.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import com.example.politravel.R
 import java.util.*
 
 class MainActivity: AppCompatActivity()
 {
+    object languageConstants{
+        const val SPANISH = "Español"
+        const val CATALAN = "Català"
+        const val  ENGLISH = "English"
+        const val LANGUAGE = "Language"
+    }
     private var languages: Spinner?=null
+    var language: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -20,7 +28,11 @@ class MainActivity: AppCompatActivity()
         var lang: String
         val main = Intent(this, MainActivity::class.java)
 
-        val languagesList = arrayOf("", "Español", "Català", "English")
+        val languagesList = arrayOf("",
+            languageConstants.SPANISH,
+            languageConstants.CATALAN,
+            languageConstants.ENGLISH
+        )
         var adapter: ArrayAdapter<String> =
             ArrayAdapter(this, android.R.layout.simple_spinner_item, languagesList)
 
@@ -31,22 +43,26 @@ class MainActivity: AppCompatActivity()
         {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
             {
+
                 when(position)
                 {
                     1 ->
                     {
+                        language = languageConstants.SPANISH
                         lang = "es"
                         setLocale(lang, "ES")
                         startActivity(main)
                     }
                     2 ->
                     {
+                        language = languageConstants.CATALAN
                         lang = "ca"
                         setLocale(lang, "ES")
                         startActivity(main)
                     }
                     3 ->
                     {
+                        language = languageConstants.ENGLISH
                         lang = "en"
                         setLocale(lang, "rUS")
                         startActivity(main)
@@ -68,6 +84,7 @@ class MainActivity: AppCompatActivity()
         val continuar = findViewById<LinearLayout>(R.id.initial_layout)
         continuar.setOnClickListener{
             val intent = Intent(this, PaquetListActivity::class.java)
+            intent.putExtra(languageConstants.LANGUAGE, language)
             startActivity(intent)
         }
 
