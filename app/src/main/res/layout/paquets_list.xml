@@ -7,7 +7,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.15"
+        android:layout_weight="1"
         android:background="@color/dark_purple">
 
         <TextView
@@ -32,6 +32,6 @@
         android:id="@+id/list_paquet"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="8"/>
 
 </LinearLayout>

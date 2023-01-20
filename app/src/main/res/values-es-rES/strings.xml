@@ -41,4 +41,5 @@
     <string name="modificar">MODIFICAR ITINERARIO</string>
     <string name="borrar">BORRAR</string>
     <string name="guardar">GUARDAR</string>
+    <string name="mapa">Ver mapa</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.politravel.activities
 
-import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -8,11 +7,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.politravel.Manifest
 import com.example.politravel.datamodel.Paquet
 import com.example.politravel.R
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 
-class PaquetDetailActivity: AppCompatActivity() {
+class PaquetDetailActivity: AppCompatActivity(), OnMapReadyCallback {
     object paquetConstants{
         const val PAQUET = "PAQUET"
         const val PLANE = "Plane"
@@ -20,6 +21,8 @@ class PaquetDetailActivity: AppCompatActivity() {
         const val CAR = "Car"
         const val BUS = "Bus"
     }
+
+    private lateinit var map: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.paquets_detail)
@@ -58,6 +61,7 @@ class PaquetDetailActivity: AppCompatActivity() {
         //TODO Fragment googleMaps
             //val imgOrigin = findViewById<ImageView>(R.id.img_origin)
             //imgOrigin.setImageResource(paquet.startPointImg)
+        createFragmentStartPoint()
 
         val itineraryBtn = findViewById<Button>(R.id.itinerary_button_detail)
         itineraryBtn.setOnClickListener(){
@@ -67,11 +71,27 @@ class PaquetDetailActivity: AppCompatActivity() {
             startActivity(intent)
         }
 
-        val edit = findViewById<ImageView>(R.id.edit_img_detail)
+        createFragmentEndPoint()
+
+        /*val edit = findViewById<ImageView>(R.id.edit_img_detail)
         edit.setOnClickListener{
             val intent = Intent(this, PaquetEditActivity::class.java)
             intent.putExtra(paquetConstants.PAQUET, paquet)
             startActivity(intent)
-        }
+        }*/
+    }
+
+    private fun createFragmentStartPoint(){
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map_start_point) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
+
+    private fun createFragmentEndPoint(){
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map_end_point) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        map = googleMap
     }
 }
