@@ -3,7 +3,9 @@ package com.example.politravel.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import com.example.politravel.R
 import java.util.*
@@ -91,6 +93,12 @@ class MainActivity: AppCompatActivity()
             startActivity(intent)
         }
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, getString(R.string.continuar), Toast.LENGTH_LONG).show()
     }
 
     private fun setLocale(lang: String, loc: String)

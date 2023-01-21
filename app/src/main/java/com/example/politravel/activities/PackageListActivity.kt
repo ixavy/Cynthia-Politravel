@@ -9,11 +9,12 @@ import com.example.politravel.datamodel.Json
 import com.example.politravel.datamodel.Paquet
 import com.example.politravel.adapters.PaquetsAdapter
 import com.example.politravel.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class PackageListActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.paquets_list)
+        setContentView(R.layout.package_list)
 
         val paquetsList = findViewById<ListView>(R.id.list_paquet)
 
@@ -21,7 +22,7 @@ class PackageListActivity: AppCompatActivity() {
         val language: String = intent.getStringExtra(MainActivity.languageConstants.LANGUAGE) as String
         var paquets: MutableList<Paquet> = paquetsLanguage(language)
 
-        val adapter = PaquetsAdapter(this, R.layout.paquets_item, paquets)
+        val adapter = PaquetsAdapter(this, R.layout.package_item, paquets)
         paquetsList.adapter = adapter
 
         paquetsList.onItemClickListener = AdapterView.OnItemClickListener()
@@ -29,6 +30,12 @@ class PackageListActivity: AppCompatActivity() {
                 _, _, i, _ ->
             val intent = Intent(this, PackageDetailActivity::class.java)
             intent.putExtra(PackageDetailActivity.paquetConstants.PAQUET, paquets[i])
+            startActivity(intent)
+        }
+
+        val add = findViewById<FloatingActionButton>(R.id.add)
+        add.setOnClickListener{
+            val intent = Intent(this, PackageAddActivity::class.java)
             startActivity(intent)
         }
     }

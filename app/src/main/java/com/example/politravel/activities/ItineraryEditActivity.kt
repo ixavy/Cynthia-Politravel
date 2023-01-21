@@ -4,12 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.politravel.R
 
-/**
- * Add a package
- */
-class PackageAddActivity: AppCompatActivity() {
+class ItineraryEditActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.package_add)
+        setContentView(R.layout.itinerary_edit)
     }
 }

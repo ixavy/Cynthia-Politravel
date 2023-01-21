@@ -29,7 +29,7 @@ class PackageDetailActivity: AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.paquets_detail)
+        setContentView(R.layout.package_detail)
 
     //----Get the data------------------------------------------------------------------------------
         val intent = intent
@@ -63,8 +63,6 @@ class PackageDetailActivity: AppCompatActivity(), OnMapReadyCallback {
         //------------------------------------------------------------------------------------------
 
         //TODO Fragment googleMaps
-            //val imgOrigin = findViewById<ImageView>(R.id.img_origin)
-            //imgOrigin.setImageResource(paquet.startPointImg)
         createFragmentStartPoint()
 
         val itineraryBtn = findViewById<Button>(R.id.itinerary_button_detail)
@@ -92,6 +90,7 @@ class PackageDetailActivity: AppCompatActivity(), OnMapReadyCallback {
         map = googleMap
         createMarkerStratPoint()
     }
+
     private fun createMarkerStratPoint(){
         val coordinates = LatLng(paquet.lat, paquet.lng)
         val markerStartPoint = MarkerOptions().position(coordinates).title(this.paquet.starting_point)

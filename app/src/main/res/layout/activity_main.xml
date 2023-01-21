@@ -89,20 +89,6 @@
             android:layout_gravity="end"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/ligth_purple"
-            android:background="@drawable/shape"
-            android:layout_marginTop="55dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="@string/continuar"
-            android:textSize="17dp"
-            android:padding="10dp"
-            android:fontFamily="@font/fastup_regular"/>
     </LinearLayout>
 
 </LinearLayout>
