@@ -19,6 +19,7 @@ class PackageListActivity: AppCompatActivity() {
         val paquetsList = findViewById<ListView>(R.id.list_paquet)
 
         val intent = intent
+        //TODO falla al coger el dato
         val language: String = intent.getStringExtra(MainActivity.languageConstants.LANGUAGE) as String
         var paquets: MutableList<Paquet> = paquetsLanguage(language)
 

@@ -63,7 +63,7 @@ class PackageEditActivity: AppCompatActivity(), OnMapReadyCallback {
 
         val transports = findViewById<Spinner>(R.id.spinner_transport)
 
-        val transportsList = arrayOf("", PLANE, AVE, CAR, BUS)
+        val transportsList = arrayOf("", PLANE, CAR, AVE, BUS)
         var adapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, transportsList)
 
         transports?.adapter=adapter
@@ -80,10 +80,10 @@ class PackageEditActivity: AppCompatActivity(), OnMapReadyCallback {
                         transportImg.setImageResource(R.drawable.transp_plane)
                     }
                     2 -> {
-                        transportImg.setImageResource(R.drawable.transp_train)
+                        transportImg.setImageResource(R.drawable.transp_car)
                     }
                     3 -> {
-                        transportImg.setImageResource(R.drawable.transp_car)
+                        transportImg.setImageResource(R.drawable.transp_train)
                     }
                     4 -> {
                         transportImg.setImageResource(R.drawable.transp_bus)
@@ -120,6 +120,11 @@ class PackageEditActivity: AppCompatActivity(), OnMapReadyCallback {
         }
         createFragment()
     }
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, getString(R.string.edit), Toast.LENGTH_LONG).show()
+    }
+
     fun openGallery(){
         val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
         startActivityForResult(gallery, galleryConstants.PICK_IMAGE)

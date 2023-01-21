@@ -42,4 +42,5 @@
     <string name="borrar">DELETE</string>
     <string name="guardar">SAVE</string>
     <string name="mapa">See map</string>
+    <string name="edit">Click on the text to edit it</string>
 </resources>

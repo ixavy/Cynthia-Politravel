@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">POLITRAVEL</string>
     <string name="bienvenida">Bienvenido a la aplicación de gestión de paquetes turísticos</string>
-    <string name="continuar">Presiona cualquier punto de la pantalla para continuarPresiona cualquier punto de la pantalla para continuar</string>
+    <string name="continuar">Presiona cualquier punto de la pantalla para continuar</string>
     <string name="info">Esta aplicación que patrocina la agencia de viajes Politravel está creada para garantizar una buena gestión y administración de los paquetes turísticos que vende además de optimizar el proceso</string>
     <string name="idioma">Selecciona un idioma</string>
     <string name="itinerary">Itinerario</string>
@@ -42,4 +42,5 @@
     <string name="borrar">BORRAR</string>
     <string name="guardar">GUARDAR</string>
     <string name="mapa">Ver mapa</string>
+    <string name="edit">Haz click sobre el texto para editarlo</string>
 </resources>
