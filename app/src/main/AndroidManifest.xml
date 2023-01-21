@@ -27,10 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.PaquetAddActivity"/>
-        <activity android:name=".activities.PaquetDetailActivity"/>
-        <activity android:name=".activities.PaquetEditActivity"/>
-        <activity android:name=".activities.PaquetListActivity"/>
+        <activity android:name=".activities.PackageAddActivity"/>
+        <activity android:name=".activities.PackageDetailActivity"/>
+        <activity android:name=".activities.PackageEditActivity"/>
+        <activity android:name=".activities.PackageListActivity"/>
         <activity android:name=".activities.InfoActivity"/>
         <activity android:name=".activities.ItineraryListActivity"/>
     </application>

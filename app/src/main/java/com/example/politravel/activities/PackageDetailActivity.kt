@@ -9,11 +9,15 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.politravel.datamodel.Paquet
 import com.example.politravel.R
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class PaquetDetailActivity: AppCompatActivity(), OnMapReadyCallback {
+class PackageDetailActivity: AppCompatActivity(), OnMapReadyCallback {
     object paquetConstants{
         const val PAQUET = "PAQUET"
         const val PLANE = "Plane"
@@ -21,7 +25,7 @@ class PaquetDetailActivity: AppCompatActivity(), OnMapReadyCallback {
         const val CAR = "Car"
         const val BUS = "Bus"
     }
-
+    lateinit var paquet:Paquet
     private lateinit var map: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +33,7 @@ class PaquetDetailActivity: AppCompatActivity(), OnMapReadyCallback {
 
     //----Get the data------------------------------------------------------------------------------
         val intent = intent
-        val paquet: Paquet = intent.getSerializableExtra(paquetConstants.PAQUET) as Paquet
+        paquet= intent.getSerializableExtra(paquetConstants.PAQUET) as Paquet
     //----------------------------------------------------------------------------------------------
 
     //----Put the data in the layout----------------------------------------------------------------
@@ -71,14 +75,12 @@ class PaquetDetailActivity: AppCompatActivity(), OnMapReadyCallback {
             startActivity(intent)
         }
 
-        createFragmentEndPoint()
-
-        /*val edit = findViewById<ImageView>(R.id.edit_img_detail)
-        edit.setOnClickListener{
-            val intent = Intent(this, PaquetEditActivity::class.java)
+        val add = findViewById<FloatingActionButton>(R.id.add)
+        add.setOnClickListener{
+            val intent = Intent(this, PackageEditActivity::class.java)
             intent.putExtra(paquetConstants.PAQUET, paquet)
             startActivity(intent)
-        }*/
+        }
     }
 
     private fun createFragmentStartPoint(){
@@ -86,12 +88,16 @@ class PaquetDetailActivity: AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
     }
 
-    private fun createFragmentEndPoint(){
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map_end_point) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-    }
-
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
+        createMarkerStratPoint()
+    }
+    private fun createMarkerStratPoint(){
+        val coordinates = LatLng(paquet.lat, paquet.lng)
+        val markerStartPoint = MarkerOptions().position(coordinates).title(this.paquet.starting_point)
+        map.addMarker(markerStartPoint)
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 18f),
+        4000,
+        null)
     }
 }

@@ -10,7 +10,7 @@ import com.example.politravel.datamodel.Paquet
 import com.example.politravel.adapters.PaquetsAdapter
 import com.example.politravel.R
 
-class PaquetListActivity: AppCompatActivity() {
+class PackageListActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.paquets_list)
@@ -27,8 +27,8 @@ class PaquetListActivity: AppCompatActivity() {
         paquetsList.onItemClickListener = AdapterView.OnItemClickListener()
         {
                 _, _, i, _ ->
-            val intent = Intent(this, PaquetDetailActivity::class.java)
-            intent.putExtra(PaquetDetailActivity.paquetConstants.PAQUET, paquets[i])
+            val intent = Intent(this, PackageDetailActivity::class.java)
+            intent.putExtra(PackageDetailActivity.paquetConstants.PAQUET, paquets[i])
             startActivity(intent)
         }
     }

@@ -6,6 +6,9 @@ import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.politravel.R
 
+/**
+ * Places to visit in a package
+ */
 class ItineraryListActivity: AppCompatActivity() {
     object itineraryConstants{
         const val ITINERARY = "ITINERARY"
@@ -16,11 +19,14 @@ class ItineraryListActivity: AppCompatActivity() {
 
     //----Get the data------------------------------------------------------------------------------
         val intent = intent
-        val itinerary: ArrayList<String> = intent.getStringArrayListExtra(itineraryConstants.ITINERARY) as ArrayList<String>
+        val itinerary: ArrayList<String> =
+            intent.getStringArrayListExtra(itineraryConstants.ITINERARY) as ArrayList<String>
     //----------------------------------------------------------------------------------------------
 
+    //----Show the data-----------------------------------------------------------------------------
         var itineraryList = findViewById<ListView>(R.id.list_itinerary)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itinerary)
         itineraryList.adapter = adapter
+    //----------------------------------------------------------------------------------------------
     }
 }

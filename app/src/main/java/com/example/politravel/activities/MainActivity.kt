@@ -8,6 +8,9 @@ import android.widget.*
 import com.example.politravel.R
 import java.util.*
 
+/**
+ * Principal activity (initial)
+ */
 class MainActivity: AppCompatActivity()
 {
     object languageConstants{
@@ -24,7 +27,7 @@ class MainActivity: AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //-----Cambiar idioma-----------------------------------------------------------------------
+        //-----Change language----------------------------------------------------------------------
         var lang: String
         val main = Intent(this, MainActivity::class.java)
 
@@ -83,7 +86,7 @@ class MainActivity: AppCompatActivity()
 
         val continuar = findViewById<LinearLayout>(R.id.initial_layout)
         continuar.setOnClickListener{
-            val intent = Intent(this, PaquetListActivity::class.java)
+            val intent = Intent(this, PackageListActivity::class.java)
             intent.putExtra(languageConstants.LANGUAGE, language)
             startActivity(intent)
         }
