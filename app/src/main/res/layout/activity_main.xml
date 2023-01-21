@@ -56,7 +56,6 @@
             android:id="@+id/spinner_language"
             android:layout_width="35dp"
             android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"
             android:layout_marginTop="27dp"
             android:layout_marginLeft="5dp"/>
 

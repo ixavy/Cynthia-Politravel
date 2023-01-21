@@ -10,6 +10,7 @@ import com.example.politravel.datamodel.Paquet
 import com.example.politravel.adapters.PaquetsAdapter
 import com.example.politravel.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.*
 
 class PackageListActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,9 +19,9 @@ class PackageListActivity: AppCompatActivity() {
 
         val paquetsList = findViewById<ListView>(R.id.list_paquet)
 
-        val intent = intent
+        val intent = intent.extras
         //TODO falla al coger el dato
-        val language: String = intent.getStringExtra(MainActivity.languageConstants.LANGUAGE) as String
+        val language = intent?.getString(MainActivity.languageConstants.LANGUAGE)
         var paquets: MutableList<Paquet> = paquetsLanguage(language)
 
         val adapter = PaquetsAdapter(this, R.layout.package_item, paquets)
@@ -39,10 +40,13 @@ class PackageListActivity: AppCompatActivity() {
             val intent = Intent(this, PackageAddActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 
-    fun paquetsLanguage(language: String): MutableList<Paquet>{
+    fun paquetsLanguage(language: String?): MutableList<Paquet>{
         var list: MutableList<Paquet>
+        Locale.getDefault()
         when (language) {
             MainActivity.languageConstants.ENGLISH ->
                 list = Json.getPaquets(this, Json.jsonNames.ENGLISH)

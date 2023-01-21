@@ -16,13 +16,13 @@ import java.util.*
 class MainActivity: AppCompatActivity()
 {
     object languageConstants{
-        const val SPANISH = "Español"
-        const val CATALAN = "Català"
-        const val  ENGLISH = "English"
+        const val SPANISH = "es"
+        const val CATALAN = "ca"
+        const val  ENGLISH = "en"
         const val LANGUAGE = "Language"
     }
     private var languages: Spinner?=null
-    var language: String = ""
+    var lang: String = "ca"
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -44,30 +44,27 @@ class MainActivity: AppCompatActivity()
         languages = findViewById(R.id.spinner_language)
         languages?.adapter=adapter
 
+
         languages?.onItemSelectedListener = object: AdapterView.OnItemSelectedListener
         {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
             {
-
                 when(position)
                 {
                     1 ->
                     {
-                        language = languageConstants.SPANISH
                         lang = "es"
                         setLocale(lang, "ES")
                         startActivity(main)
                     }
                     2 ->
                     {
-                        language = languageConstants.CATALAN
                         lang = "ca"
                         setLocale(lang, "ES")
                         startActivity(main)
                     }
                     3 ->
                     {
-                        language = languageConstants.ENGLISH
                         lang = "en"
                         setLocale(lang, "rUS")
                         startActivity(main)
@@ -75,7 +72,7 @@ class MainActivity: AppCompatActivity()
                 }
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
+
             }
         }
         //------------------------------------------------------------------------------------------
@@ -89,10 +86,9 @@ class MainActivity: AppCompatActivity()
         val continuar = findViewById<LinearLayout>(R.id.initial_layout)
         continuar.setOnClickListener{
             val intent = Intent(this, PackageListActivity::class.java)
-            intent.putExtra(languageConstants.LANGUAGE, language)
+            intent.putExtra(languageConstants.LANGUAGE, this.lang)
             startActivity(intent)
         }
-
     }
 
     override fun onResume() {
