@@ -33,7 +33,9 @@
         <activity android:name=".activities.PackageListActivity"/>
         <activity android:name=".activities.InfoActivity"/>
         <activity android:name=".activities.ItineraryListActivity"/>
-        <activity android:name=".activities.ItineraryEditActivity"/>
+        <activity android:name=".activities.ItineraryListEditAddActivity"/>
+        <activity android:name=".activities.ItineraryDetailEditActivity"/>
+        <activity android:name=".activities.ItineraryDetailAddActivity"/>
     </application>
 
 </manifest>

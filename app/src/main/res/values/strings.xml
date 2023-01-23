@@ -37,9 +37,14 @@
     <string name="palacio">Palau Reial</string>
     <string name="dias"> dies</string>
     <string name="dias1">Dies: </string>
-    <string name="modificar">MODIFICAR ITINERARI</string>
+    <string name="modificar">ITINERARI</string>
     <string name="borrar">BORRAR</string>
     <string name="guardar">GUARDAR</string>
     <string name="mapa">Veure mapa</string>
     <string name="edit">Fes click sobre el text per editar-lo</string>
+    <string name="edit_itinerary">Fes click sobre una ciutat per editar-la</string>
+    <string name="coordinates_start_point">Afegeix les coordenades del lloc d\'inici</string>
+    <string name="coordinates_end_point">Afegeix les coordenades del lloc final</string>
+    <string name="name">Escriu un nom pel paquet</string>
+    <string name="img_null">Selecciona una imatge per al paquet</string>
 </resources>

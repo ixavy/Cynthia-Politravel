@@ -20,7 +20,8 @@
             android:textSize="35dp"
             android:layout_marginLeft="40dp"
             android:textColor="@color/white"
-            android:fontFamily="@font/fastup_bold"/>
+            android:fontFamily="@font/fastup_bold"
+            android:enabled="false"/>
 
         <ImageView
             android:layout_width="50dp"
@@ -29,7 +30,7 @@
             android:src="@drawable/logo_plane" />
     </androidx.appcompat.widget.Toolbar>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:orientation="horizontal"
@@ -40,7 +41,7 @@
             android:id="@+id/img_paquet_high"
             android:layout_width="0dp"
             android:layout_weight="6"
-            android:layout_height="250dp" />
+            android:layout_height="194dp" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -59,7 +60,8 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:fontFamily="@font/louis_george_cafe"
-                android:autoSizeTextType="uniform"/>
+                android:autoSizeTextType="uniform"
+                android:enabled="false"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -91,7 +93,7 @@
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/louis_george_cafe"
                     android:autoSizeTextType="uniform"
-                    />
+                    android:enabled="false"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -123,7 +125,8 @@
                 android:textColor="@color/black"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/louis_george_cafe"
-                app:autoSizeTextType="uniform" />
+                app:autoSizeTextType="uniform"
+                android:enabled="false"/>
 
         </LinearLayout>
 
@@ -136,19 +139,20 @@
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="@drawable/icon_destiny"
-                android:layout_marginTop="17dp"/>
+                android:layout_marginTop="17dp"
+                android:src="@drawable/icon_destiny" />
 
             <TextView
                 android:id="@+id/end_point_paquet_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="25dp"
                 android:background="@drawable/subrayar"
-                android:textColor="@color/grey"
-                android:layout_gravity="center_vertical"
+                android:enabled="false"
                 android:fontFamily="@font/louis_george_cafe"
+                android:textColor="@color/grey"
                 app:autoSizeTextType="uniform" />
 
         </LinearLayout>
@@ -157,7 +161,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.7"
         android:orientation="vertical">
         <Button
             android:id="@+id/itinerary_button_detail"
@@ -171,12 +175,13 @@
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/louis_george_cafe" />
     </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add"
+        android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:src="@drawable/icon_edit_white"
         android:layout_margin="16dp"
-        android:backgroundTint="@color/dark_purple" />
+        android:backgroundTint="@color/dark_purple"
+        android:src="@drawable/icon_edit_white" />
 </LinearLayout>

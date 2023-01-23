@@ -38,9 +38,14 @@
     <string name="palacio">Palacio Real</string>
     <string name="dias"> dias</string>
     <string name="dias1">Dias: </string>
-    <string name="modificar">MODIFICAR ITINERARIO</string>
+    <string name="modificar">ITINERARIO</string>
     <string name="borrar">BORRAR</string>
     <string name="guardar">GUARDAR</string>
     <string name="mapa">Ver mapa</string>
     <string name="edit">Haz click sobre el texto para editarlo</string>
+    <string name="edit_itinerary">Haz click sobre una ciudad para editarla</string>
+    <string name="coordinates_start_point">Añade las coordenadas del lugar de inicio</string>
+    <string name="coordinates_end_point">Añade las coordenadas del lugar de fin</string>
+    <string name="name">Escribe un nombre para el paquete</string>
+    <string name="img_null">Selecciona una imagen para el paquete</string>
 </resources>

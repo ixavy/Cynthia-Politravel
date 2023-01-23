@@ -35,7 +35,7 @@ class PackageEditActivity: AppCompatActivity(), OnMapReadyCallback {
         paquet = intent.getSerializableExtra(PackageDetailActivity.paquetConstants.PAQUET) as Paquet
     //----------------------------------------------------------------------------------------------
 
-        //----Put the data in the layout----------------------------------------------------------------
+    //----Put the data in the layout----------------------------------------------------------------
 
         //-----Image--------------------------------------------------------------------------------
         val img = findViewById<ImageView>(R.id.img_paquet_high)
@@ -103,7 +103,7 @@ class PackageEditActivity: AppCompatActivity(), OnMapReadyCallback {
 
         val itineraryBtn = findViewById<Button>(R.id.itinerary_button_edit)
         itineraryBtn.setOnClickListener(){
-            val intent = Intent(this, ItineraryEditActivity::class.java)
+            val intent = Intent(this, ItineraryListEditAddActivity::class.java)
             var itineraryList: ArrayList<String> = paquet.itinerary
             intent.putExtra(ItineraryListActivity.itineraryConstants.ITINERARY, itineraryList)
             startActivity(intent)

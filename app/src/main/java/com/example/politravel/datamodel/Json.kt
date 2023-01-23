@@ -7,21 +7,19 @@ import com.google.gson.reflect.TypeToken
 import java.io.FileWriter
 
 class Json {
-    object jsonNames{
-        const val SPANISH = "paquets_cast.json"
-        const val CATALAN = "paquets_cat.json"
-        const val  ENGLISH = "paquets_eng.json"
+    object jsonName{
+        const val JSON = "paquets.json"
     }
     companion object
     {
-        fun getPaquets(context: Context, jsonName: String): MutableList<Paquet> {
+        fun getPaquets(context: Context, jsonName: String): ArrayList<Paquet> {
             val jsonFilePath = context.filesDir.toString() + "/json/" + jsonName
             val jsonFile = FileReader(jsonFilePath)
             val listPlayerType = object : TypeToken<MutableList<Paquet>>() {}.type
             return Gson().fromJson(jsonFile, listPlayerType)
         }
 
-        fun savePaquets(context: Context, paquets: MutableList<Paquet>, jsonName: String){
+        fun savePaquets(context: Context, paquets: ArrayList<Paquet>, jsonName: String){
             val jsonFilePath = context.filesDir.toString() + "/json/" + jsonName
             val jsonFile = FileWriter(jsonFilePath)
             var gson = Gson()

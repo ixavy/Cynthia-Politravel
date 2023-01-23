@@ -19,9 +19,8 @@ class PackageListActivity: AppCompatActivity() {
 
         val paquetsList = findViewById<ListView>(R.id.list_paquet)
 
-        val intent = intent.extras
-        val language = intent?.getString(MainActivity.languageConstants.LANGUAGE)
-        var paquets: MutableList<Paquet> = paquetsLanguage(language)
+
+        var paquets: ArrayList<Paquet> = Json.getPaquets(this, Json.jsonName.JSON)
 
         val adapter = PaquetsAdapter(this, R.layout.package_item, paquets)
         paquetsList.adapter = adapter
@@ -37,24 +36,8 @@ class PackageListActivity: AppCompatActivity() {
         val add = findViewById<FloatingActionButton>(R.id.add)
         add.setOnClickListener{
             val intent = Intent(this, PackageAddActivity::class.java)
+            intent.putExtra(PackageDetailActivity.paquetConstants.PAQUETS, paquets)
             startActivity(intent)
         }
-
-
-    }
-
-    fun paquetsLanguage(language: String?): MutableList<Paquet>{
-        var list: MutableList<Paquet>
-
-        val locale: String = Locale.getDefault().getDisplayName()
-        if(locale.equals(MainActivity.languageConstants.CATALAN)){
-            list = Json.getPaquets(this, Json.jsonNames.CATALAN)
-        }else if(locale.equals(MainActivity.languageConstants.SPANISH)){
-            list = Json.getPaquets(this, Json.jsonNames.SPANISH)
-        }else{
-            list = Json.getPaquets(this, Json.jsonNames.ENGLISH)
-        }
-
-        return list
     }
 }

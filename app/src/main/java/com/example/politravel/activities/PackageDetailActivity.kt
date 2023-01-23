@@ -20,6 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class PackageDetailActivity: AppCompatActivity(), OnMapReadyCallback {
     object paquetConstants{
         const val PAQUET = "PAQUET"
+        const val PAQUETS = "PAQUETS"
         const val PLANE = "Plane"
         const val  AVE = "Ave"
         const val CAR = "Car"
@@ -73,8 +74,8 @@ class PackageDetailActivity: AppCompatActivity(), OnMapReadyCallback {
             startActivity(intent)
         }
 
-        val add = findViewById<FloatingActionButton>(R.id.add)
-        add.setOnClickListener{
+        val edit = findViewById<FloatingActionButton>(R.id.edit)
+        edit.setOnClickListener(){
             val intent = Intent(this, PackageEditActivity::class.java)
             intent.putExtra(paquetConstants.PAQUET, paquet)
             startActivity(intent)

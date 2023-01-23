@@ -14,14 +14,6 @@ import java.util.*
  */
 class MainActivity: AppCompatActivity()
 {
-    object languageConstants{
-        const val SPANISH = "español"
-        const val CATALAN = "català"
-        const val  ENGLISH = "en"
-        const val LANGUAGE = "Language"
-    }
-    val locale: String = Locale.getDefault().getDisplayName()
-
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -44,13 +36,4 @@ class MainActivity: AppCompatActivity()
         super.onResume()
         Toast.makeText(this, getString(R.string.continuar), Toast.LENGTH_LONG).show()
     }
-
-    private fun setLocale(lang: String, loc: String)
-    {
-        val locale = Locale(lang, loc)
-        val config = resources.configuration
-        config.setLocale(locale)
-        resources.updateConfiguration(config, resources.displayMetrics)
-    }
-
 }
