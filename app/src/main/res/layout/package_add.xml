@@ -52,12 +52,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="10dp"
                 android:autoSizeTextType="uniform"
-                android:hint="@string/name"
                 android:fontFamily="@font/louis_george_cafe"
+                android:hint="@string/name"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
 
 
             <EditText
