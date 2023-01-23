@@ -47,4 +47,6 @@
     <string name="coordinates_end_point">Afegeix les coordenades del lloc final</string>
     <string name="name">Escriu un nom pel paquet</string>
     <string name="img_null">Selecciona una imatge per al paquet</string>
+    <string name="img_low">Imatge en baixa qualitat</string>
+    <string name="img_high">Imatge en alta qualitat</string>
 </resources>

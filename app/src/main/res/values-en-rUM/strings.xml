@@ -48,4 +48,6 @@
     <string name="coordinates_end_point">Add the end point coordinates</string>
     <string name="name">Put a paquet name</string>
     <string name="img_null">Select an image for the package</string>
+    <string name="img_low">Low image</string>
+    <string name="img_high">High image</string>
 </resources>

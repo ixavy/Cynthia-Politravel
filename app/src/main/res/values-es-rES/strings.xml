@@ -48,4 +48,6 @@
     <string name="coordinates_end_point">Añade las coordenadas del lugar de fin</string>
     <string name="name">Escribe un nombre para el paquete</string>
     <string name="img_null">Selecciona una imagen para el paquete</string>
+    <string name="img_low">Imagen en baja calidad</string>
+    <string name="img_high">Imagen en alta calidad</string>
 </resources>

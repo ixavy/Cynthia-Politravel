@@ -24,7 +24,8 @@ class PackageEditActivity: AppCompatActivity(), OnMapReadyCallback {
     lateinit var paquet:Paquet
     private lateinit var map: GoogleMap
     object galleryConstants{
-        const val PICK_IMAGE = 100
+        const val PICK_IMAGE_LOW = 50
+        const val PICK_IMAGE_HIGH = 100
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -127,7 +128,7 @@ class PackageEditActivity: AppCompatActivity(), OnMapReadyCallback {
 
     fun openGallery(){
         val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-        startActivityForResult(gallery, galleryConstants.PICK_IMAGE)
+        startActivityForResult(gallery, galleryConstants.PICK_IMAGE_LOW)
     }
 
     fun createFragment(){

@@ -1,19 +1,24 @@
 package com.example.politravel.activities
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.*
+import androidx.activity.result.ActivityResult
 import androidx.appcompat.app.AppCompatActivity
 import com.example.politravel.R
 import com.example.politravel.datamodel.Paquet
+import com.example.politravel.utilities.ImageController
 import org.w3c.dom.Text
 
 /**
  * Add a package
  */
 class PackageAddActivity: AppCompatActivity() {
+    private var imageUri: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.package_add)
@@ -34,23 +39,32 @@ class PackageAddActivity: AppCompatActivity() {
         saveBtn.setOnClickListener{
 
             val paquetName = findViewById<EditText>(R.id.name_paquet_add)
+            if(!paquetName.text.equals("") && !paquetName.text.equals(null)){
+
+            }
+
             val paquetDays = findViewById<EditText>(R.id.days_paquet_add)
             val paquetStartPoint = findViewById<EditText>(R.id.starting_point_paquet_add)
             val paquetEndPoint = findViewById<EditText>(R.id.end_point_paquet_add)
 
-            val paquetImg = findViewById<ImageView>(R.id.img_paquet_high_add)
             val paquetTransport =  findViewById<ImageView>(R.id.transport_img_add)
-            if(!paquetImg.equals(null)){
 
-            }else{
-                Toast.makeText(this, getString(R.string.img_null), Toast.LENGTH_LONG).show()
+            val lastIndex = paquets.lastIndex
+            val id = paquets[lastIndex].id
+
+            imageUri?.let {
+                //ImageController.saveImage(this, )
             }
         }
 
-        val iconNewImgPaquet = findViewById<ImageView>(R.id.new_img_paquet)
-        iconNewImgPaquet.setOnClickListener{
-            openGallery()
-            //TODO añadir la imagen
+        val iconNewImgLowPaquet = findViewById<ImageView>(R.id.img_paquet_low_add)
+        iconNewImgLowPaquet.setOnClickListener{
+            ImageController.openGallery(this, PackageEditActivity.galleryConstants.PICK_IMAGE_LOW)
+        }
+
+        val iconNewImgHighPaquet = findViewById<ImageView>(R.id.img_paquet_high_add)
+        iconNewImgHighPaquet.setOnClickListener{
+            ImageController.openGallery(this, PackageEditActivity.galleryConstants.PICK_IMAGE_HIGH)
         }
 
         val transportImg = findViewById<ImageView>(R.id.transport_img_add)
@@ -103,9 +117,25 @@ class PackageAddActivity: AppCompatActivity() {
         }
     }
 
-    fun openGallery(){
-        val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-        startActivityForResult(gallery, PackageEditActivity.galleryConstants.PICK_IMAGE)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        when{
+            requestCode == PackageEditActivity.galleryConstants.PICK_IMAGE_LOW
+                    && resultCode == Activity.RESULT_OK -> {
+                        val paquetLowImg = findViewById<ImageView>(R.id.img_paquet_low_add)
+                        //!! = is not null
+                        imageUri = data!!.data
+                        paquetLowImg.setImageURI(imageUri)
+                    }
+            requestCode == PackageEditActivity.galleryConstants.PICK_IMAGE_HIGH
+                    && resultCode == Activity.RESULT_OK -> {
+                val paquetHighImg = findViewById<ImageView>(R.id.img_paquet_high_add)
+                //!! = is not null
+                imageUri = data!!.data
+                paquetHighImg.setImageURI(imageUri)
+            }
+        }
     }
 
 }
