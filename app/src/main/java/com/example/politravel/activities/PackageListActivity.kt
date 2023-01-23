@@ -20,7 +20,6 @@ class PackageListActivity: AppCompatActivity() {
         val paquetsList = findViewById<ListView>(R.id.list_paquet)
 
         val intent = intent.extras
-        //TODO falla al coger el dato
         val language = intent?.getString(MainActivity.languageConstants.LANGUAGE)
         var paquets: MutableList<Paquet> = paquetsLanguage(language)
 
@@ -46,17 +45,14 @@ class PackageListActivity: AppCompatActivity() {
 
     fun paquetsLanguage(language: String?): MutableList<Paquet>{
         var list: MutableList<Paquet>
-        Locale.getDefault()
-        when (language) {
-            MainActivity.languageConstants.ENGLISH ->
-                list = Json.getPaquets(this, Json.jsonNames.ENGLISH)
-            MainActivity.languageConstants.CATALAN ->
-                list = Json.getPaquets(this, Json.jsonNames.CATALAN)
-            MainActivity.languageConstants.SPANISH ->
-                list = Json.getPaquets(this, Json.jsonNames.SPANISH)
-            else -> {
-                list = Json.getPaquets(this, Json.jsonNames.CATALAN)
-            }
+
+        val locale: String = Locale.getDefault().getDisplayName()
+        if(locale.equals(MainActivity.languageConstants.CATALAN)){
+            list = Json.getPaquets(this, Json.jsonNames.CATALAN)
+        }else if(locale.equals(MainActivity.languageConstants.SPANISH)){
+            list = Json.getPaquets(this, Json.jsonNames.SPANISH)
+        }else{
+            list = Json.getPaquets(this, Json.jsonNames.ENGLISH)
         }
 
         return list
