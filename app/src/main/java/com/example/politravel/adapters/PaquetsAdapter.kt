@@ -11,7 +11,7 @@ import android.widget.TextView
 import com.example.politravel.datamodel.Paquet
 import com.example.politravel.R
 
-class PaquetsAdapter(context: Context, val layout: Int, val paquets: MutableList<Paquet>):
+class PaquetsAdapter(context: Context, val layout: Int, val paquets: ArrayList<Paquet>):
     ArrayAdapter<Paquet>(context, layout, paquets) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var view: View
@@ -27,10 +27,17 @@ class PaquetsAdapter(context: Context, val layout: Int, val paquets: MutableList
     }
 
     fun bindPaquet(view: View, paquet: Paquet){
+        /*
         val imgPaquet = view.findViewById<ImageView>(R.id.img_paquet_low)
         val paquetPath = this.context.filesDir.toString() + "/img/" + paquet.img_low
         val bitmap = BitmapFactory.decodeFile(paquetPath)
         imgPaquet.setImageBitmap(bitmap)
+
+         */
+
+
+        val imgPaquet = view.findViewById<ImageView>(R.id.img_paquet_low)
+        imgPaquet.setImageResource(paquet.img_low)
 
         val paquetName = view.findViewById<TextView>(R.id.name_paquet_item)
         paquetName.text = paquet.name

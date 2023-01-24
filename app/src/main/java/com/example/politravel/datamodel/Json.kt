@@ -20,10 +20,11 @@ class Json {
         }
 
         fun savePaquets(context: Context, paquets: ArrayList<Paquet>, jsonName: String){
+
             val jsonFilePath = context.filesDir.toString() + "/json/" + jsonName
             val jsonFile = FileWriter(jsonFilePath)
             var gson = Gson()
-            var jsonElement = gson.toJson(paquets)
+            var jsonElement: String = gson.toJson(paquets)
             jsonFile.write(jsonElement)
             jsonFile.close()
         }

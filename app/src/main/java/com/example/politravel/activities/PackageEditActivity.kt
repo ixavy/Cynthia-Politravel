@@ -38,12 +38,16 @@ class PackageEditActivity: AppCompatActivity(), OnMapReadyCallback {
 
     //----Put the data in the layout----------------------------------------------------------------
 
+/*
         //-----Image--------------------------------------------------------------------------------
         val img = findViewById<ImageView>(R.id.img_paquet_high)
         val paquetPath = filesDir.toString() + "/img/" + paquet.img_high
         val bitmap = BitmapFactory.decodeFile(paquetPath)
         img.setImageBitmap(bitmap)
         //------------------------------------------------------------------------------------------
+*/
+        val imgPaquet = findViewById<ImageView>(R.id.img_paquet_high)
+        imgPaquet.setImageResource(paquet.img_high)
 
         val name = findViewById<TextView>(R.id.name_paquet_edit)
         name.text = paquet.name
